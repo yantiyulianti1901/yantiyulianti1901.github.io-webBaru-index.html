@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet" />
+    <style>
+      button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  text-transform: uppercase;
+  margin-left: 555px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+}
+button a{
+  text-decoration: none;
+  color: black;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #7ab9f8;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h4><a href="index.html">YantiY</a></h4>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="kalkulator.html">Kalkulator</a></li>
+        <li><a href="bangunDatar.html">Bangun Datar</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <section class="home">
+      <img src="1.jpg" alt="bg" width="100%" />
+      <p>Website adalah kumpulan halaman dalam suatu domain yang memuat tentang berbagai informasi agar dapat dibaca dan dilihat oleh pengguna internet melalui sebuah mesin pencari. Informasi yang dapat dimuat dalam sebuah website umumnya berisi mengenai konten gambar, ilustrasi, video, dan teks untuk berbagai macam kepentingan.
+        <br><br>
+        Biasanya untuk tampilan awal sebuah website dapat diakses melalui halaman utama (homepage) menggunakan browser dengan menuliskan URL yang tepat. Di dalam sebuah homepage, juga memuat beberapa halaman web turunan yang saling terhubung satu dengan yang lain.</p>
+    </section>
+    <section class="biodata">
+      <h3>Biodata</h3>
+      <p>Klik tombol dibawah untuk melihat biodata saya!</p>
+      <button><a href="biodata.html">My Biodata</a></button>
+    </section>
+    <section class="kalkulator">
+      <h3>Kalkulator</h3>
+      <p>
+        Klik tombol dibawah untuk melihat aplikasi kalkulator sederhana yang sudah saya buat menggunakan Html CSS dan JavaScript!
+      </p>
+      <button><a href="kalkulator.html">Kalkulator</a></button>
+    </section>
+    <section class="bangunDatar">
+      <h3>Bangun Datar</h3>
+      <p>Klik tombol dibawah untuk melihat aplikasi peritungan bangun datar menggunakan Html,CSS, dan JavaScript</p>
+      <button><a href="bangunDatar.html">Bangun Datar</a></button>
+    </section>
+    <footer>
+        <small>CopyRight &copy; 2022 - YantiY. All Rights Reserves </small>
+    </footer>
+    <script>
+      const menu = document.querySelector(".menu-toggle input");
+      const nav = document.querySelector("nav ul");
+      menu.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>

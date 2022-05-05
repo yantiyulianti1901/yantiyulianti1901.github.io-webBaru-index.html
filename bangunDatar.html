@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.nama {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1238px;
+  margin-top: 100px;
+  color: lightblue;
+}
+.container h2 {
+  text-align: center;
+  padding: 15px 0;
+}
+.bangun {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.persegi {
+  width: 100px;
+  height: 100px;
+  background-color: plum;
+}
+.lingkaran {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  border-radius: 50px;
+}
+.segitiga {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid rgb(4, 248, 118);
+  border-left: 50px solid #fff;
+  border-right: 50px solid #fff;
+}
+.persegiPanjang {
+  width: 150px;
+  height: 70px;
+  background-color: pink;
+}
+.jajarGenjang {
+  width: 150px;
+  height: 75px;
+  background-color: orangered;
+  transform: skew(20deg);
+}
+.cal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: black;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  text-transform: uppercase;
+  margin: 80px;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #7ab9f8;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+
+@media (max-width: 576px) {
+.bangun {
+   display: flex;
+   flex-direction: column;
+   margin: 30px 0; 
+}
+.persegi, .lingkaran, .segitiga, .persegiPanjang, .jajarGenjang {
+    margin-top: 30px;
+}
+.nama {
+    display: none;
+}
+}
+
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <h4><a href="index.html">YantiY</a></h4>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">Biodata</a></li>
+            <li><a href="kalkulator.html">Kalkulator</a></li>
+            <li><a href="bangunDatar.html">Bangun Datar</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <input type="checkbox" />
+           <span></span>
+           <span></span>
+           <span></span>
+        </div>
+    </nav>
+
+        <div class="nama">
+            <h4>Persegi </h4>
+            <h4>Lingkaran </h4>
+            <h4>segitiga </h4>
+            <h4>Persegi Panjang </h4>
+            <h4>Jajar Genjang </h4>
+        </div>
+        <div class="bangun">
+
+            <div class="persegi"></div>
+            <div class="lingkaran"></div>
+            <div class="segitiga"></div>
+            <div class="persegiPanjang"></div>
+            <div class="jajarGenjang"></div>
+        </div>
+        <div class="cal">
+            <button id="segi">hitung Luas</button>
+        </div>
+           
+    </div>
+    <br>
+    <!-- footer -->
+    <footer>
+        <small>CopyRight &copy; 2022 - YantiY. All Rights Reserves </small>
+    </footer>
+    <!-- js -->
+    <script>
+        const menu = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+        menu.addEventListener('click',function(){
+            nav.classList.toggle('slide');
+        })
+
+        // hitung bangun datar
+        const klik = document.getElementById('segi');
+
+        klik.addEventListener('click', function(){
+        let bangun = prompt('masukan bangun datar ');
+        if(bangun == 'persegi') {
+            let sisi = prompt('masukan sisi ');
+            const luas = sisi*sisi;
+            alert(`luas persegi adalah ${luas}`);
+        } else if (bangun == 'segitiga') {
+            let alas = prompt('masukan alas ');
+            let tinggi = prompt('masukan tinggi');
+            const luas1 = 1/2 * alas * tinggi;
+            alert(`luas segitiga adalah ${luas1}`);
+        } else if (bangun == 'lingkaran') {
+            let phi = prompt('masukan phi ');
+            let r = prompt('masukan jari-jari');
+            const luas = phi * r * r;
+            alert(`luas lingkaran adalah ${luas}`);
+        } else if (bangun == 'persegi panjang'){
+            let p = prompt('masukan panjang');
+            let l = prompt('masukan lebar');
+            const luas = p * l ;
+            alert(`luas persegi panjang adalah ${luas}`);
+        } else if(bangun == 'jajar genjang'){
+            let alas = prompt('masukan alas ');
+            let tinggi = prompt('masukan tinggi');
+            const luas = alas * tinggi;
+            alert(`luas jajar genjang adalah ${luas}`);
+        }
+        })
+        
+    </script>
+</body>
+</html>
